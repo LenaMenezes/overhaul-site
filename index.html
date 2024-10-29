@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link rel="stylesheet" href="src/css/style.css">
+    <title>OverHaul</title>
+</head>
+<body>
+    <!-- header -->
+    <header style="background-image: url('src/img/background.png');">
+        <!-- container -->
+         <div class="container">
+            <nav>
+                <a href="index.html">
+                    <img class="logo" src="src/img/logo.png" alt="Logo">
+                </a>
+                <ul class="ul">
+                    <a href="iniciar_sessao.html">iNICIAR SESSÃO</a>
+                    <a href="nossos-carros.html">NOSSOS CARROS</a>
+                    <a href="menu.html">MENU</a>
+                    <div class="close-icon" onclick="closeMenu()">
+                        <i class="fa-solid fa-circle-xmark"></i>
+                    </div>
+                </ul>
+                <div class="menu-icon" onclick="openMenu()">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+            <!-- banner -->
+            <section class="banner">
+                <div class="banner-text">
+                    <h1>Comece sua aventura elétrica com a OverHaul</h1>
+                    <p>Revolucionando sua Experiência de Condução!</p>
+                </div>
+            </section>
+            <!-- end banner -->
+         </div>
+         <!-- end container -->
+    </header>
+    <!-- end header --> 
+
+    <!-- mais vendidos -->
+    <section class="mais-vendidos">
+        <!-- parte de cima  -->
+        <div class="container">
+            <img src="/src/img/img-news.png" alt="news - mais vendidos ">
+            <a class="all" href="nossos-carros.html">VER TUDO</a>
+        </div>
+        <!-- parte de cima end -->
+        <div class="cards">
+            <!-- card item 1  -->
+            <div class="card-item">
+                <img class="imagem-clicavel" src="src/img/carro1.png" alt="">
+                <p class="mais-vendidos-descri">Marca: Tesla</p>
+                <p class="mais-vendidos-descri">Modelo: Model S</p>
+                <p class="mais-vendidos-descri">A partir de R$ 300.950</p>
+                <p class="mais-vendidos-descri"><a href="carro.html">Mais Detalhes > </a></p>
+            </div>
+            <!-- end card item 1 -->
+
+             <!-- card item 2  -->
+             <div class="card-item">
+                <img class="imagem-clicavel" src="src/img/carro2.png" alt="">
+                <p class="mais-vendidos-descri">Marca: Tesla</p>
+                <p class="mais-vendidos-descri">Modelo: Model S</p>
+                <p class="mais-vendidos-descri">A partir de R$ 300.950</p>
+                <p class="mais-vendidos-descri"><a href="carro.html">Mais Detalhes > </a></p>
+            </div>
+            <!-- end card item 2 -->
+
+             <!-- card item 3  -->
+             <div class="card-item">
+                <img class="imagem-clicavel" src="src/img/carro3.png" alt="">
+                <p class="mais-vendidos-descri">Marca: Tesla</p>
+                <p class="mais-vendidos-descri">Modelo: Model S</p>
+                <p class="mais-vendidos-descri">A partir de R$ 300.950</p>
+                <p class="mais-vendidos-descri"><a href="carro.html">Mais Detalhes > </a></p>
+            </div>
+            <!-- end card item 3 -->
+
+            <div id="modal" class="modal">
+                <span class="fechar">&times;</span>
+                <img class="modal-conteudo" id="imagem-ampliada">
+                <div id="caption"></div>
+            </div>
+            
+
+        </div>
+        <a class="all-mobile" href="nossos-carros.html">VER TUDO</a>
+    </section>
+    <!-- end mais vemdidos -->
+
+    <!-- eletrificação CARD 2  -->
+    <section class="eletrificacao">
+        <div class="container">
+            <h3>Descubra a eletrificação</h3>
+            <p>Conheça nossos veículos de última geração descubra as 
+                vantagens diárias de conduzir um carro elétrico.
+            </p>
+        </div>
+        <div class="cards-eletrificacao">
+            <!-- card item 1  -->
+            <div class="card-item-eletrificacao">
+                <h3>Carros 100% elétricos</h3>
+                <p>Os nossos carros 100% elétricos oferecem uma
+                   condução sem emissões sem comprometer a 
+                   autonomia e a potência.
+                </p>
+                <a href="nossos-carros.html">Carros 100% elétrico > </a>
+                <img src="src/img/carro-card-2.png" alt="">
+            </div>
+            <!-- end card item 1 -->
+
+             <!-- card item 2  -->
+             <div class="card-item-eletrificacao">
+                <h3>Carros híbridos plug-in</h3>
+                <p>Os nossos carros 100% elétricos oferecem uma
+                   condução sem emissões sem comprometer a 
+                   autonomia e a potência.
+                </p>
+                <a href="nossos-carros.html">Carros híbridos plug-in ></a>
+                <img src="src/img/carro-card-2.png" alt="">
+            </div>
+            <!-- end card item 2 -->
+        </div>
+    </section>
+    <!-- end eletrificação CARD 2 -->
+
+        <!-- nosso parceiros -->
+        <section class="clientes">
+            <div class="container">
+                <h3>Carros de marcas parceiras</h3>
+                <p>
+                    Na OverHaul, você encontra os melhores 
+                    carros elétricos e híbridos das marcas 
+                    mais renomadas do<br> mercado automotivo. 
+                    Explore nossa seleção e descubra veículos 
+                    que combinam inovação, <br>sustentabilidade 
+                    e performance de marcas líderes mundiais. 
+                </p>
+                <div>
+                    <img src="src/img/bmw.png" alt="">
+                    <img src="src/img/bmw.png" alt="">
+                    <img src="src/img/bmw.png" alt="">
+                    <img src="src/img/bmw.png" alt="">
+                    <img src="src/img/bmw.png" alt="">
+                </div>
+            </div>
+         </section>
+        <!-- end nossos parceiros -->
+
+        <footer>
+            <div id="footer_content">
+                <div id="footer_contacts">
+                    <h1>Logo</h1>
+                    <p>Lorem Ipsum is simply dummy text of the printing and  typesetting industry.</p>
+    
+                    <div id="footer_social_media">
+                        <a href="#" class="footer-link" id="instagram">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+    
+                        <a href="#" class="footer-link" id="facebook">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+    
+                        <a href="#" class="footer-link" id="whatsapp">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <ul class="footer-list">
+                    <li>
+                        <h3>Blog</h3>
+                    </li>
+                    <li>
+                        <a href="#" class="footer-link">Tech</a>
+                    </li>
+                    <li>
+                        <a href="#" class="footer-link">Adventures</a>
+                    </li>
+                    <li>
+                        <a href="#" class="footer-link">Music</a>
+                    </li>
+                </ul>
+    
+                <ul class="footer-list">
+                    <li>
+                        <h3>Products</h3>
+                    </li>
+                    <li>
+                        <a href="#" class="footer-link">App</a>
+                    </li>
+                    <li>
+                        <a href="#" class="footer-link">Desktop</a>
+                    </li>
+                    <li>
+                        <a href="#" class="footer-link">Cloud</a>
+                    </li>
+                </ul>
+    
+                <div id="footer_subscribe">
+                    <h3>Subscribe</h3>
+    
+                    <p>
+                        Enter your e-mail to get notified about
+                        our news solutions
+                    </p>
+    
+                    <div id="input_group">
+                        <input type="email" id="email">
+                        <button>
+                            <i class="fa-regular fa-envelope"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+    
+            <div id="footer_copyright">
+                © 2024 Todos os Direitos Reservados OverHaul
+            </div>
+        </footer>
+
+<script src="/src/js/script.js"></script>
+</body>
+</html>

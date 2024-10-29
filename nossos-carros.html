@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="src/css/style.css" />
+    <title>Nossos Carros</title>
+  </head>
+  <body style="background-color: #202020;">
+    <!-- header -->
+    <header>
+      <!-- container -->
+      <div class="container">
+        <nav>
+          <a href="index.html">
+            <img class="logo" src="src/img/logo.png" alt="Logo" />
+          </a>
+          <ul class="ul">
+            <a href="iniciar_sessao.html">iNICIAR SESSÃO</a>
+            <a href="index.html">HOMe</a>
+            <a href="menu.html">MENU</a>
+            <div class="close-icon" onclick="closeMenu()">
+              <i class="fa-solid fa-circle-xmark"></i>
+            </div>
+          </ul>
+          <div class="menu-icon" onclick="openMenu()">
+            <i class="fas fa-bars"></i>
+          </div>
+        </nav>
+      </div>
+      <!-- end container -->
+    </header>
+    <!-- end header -->
+    <div class="container-cars">
+      <img src="/src/img/img-news.png" alt="news - mais vendidos " />
+    </div>
+    <main>
+      <!-- Barra lateral com filtro -->
+      <aside>
+        <input type="text" id="pesquisa" placeholder="Pesquisar" />
+
+        <label for="fabricante">Fabricante:</label>
+        <select id="fabricante">
+          <option value="">Selecione Marca</option>
+          <option value="BYD">BYD</option>
+          <option value="Porsche">Porsche</option>
+        </select>
+
+        <label for="modelo">Modelo:</label>
+        <select id="modelo">
+          <option value="">Selecione modelo</option>
+          <option value="Continental">Continental</option>
+          <option value="Cayenne">Cayenne</option>
+        </select>
+
+        <label for="anoDe">Ano De:</label>
+        <select id="anoDe">
+          <option value="">De</option>
+        </select>
+
+        <label for="anoAte">Ano Até:</label>
+        <select id="anoAte">
+          <option value="">Até</option>
+        </select>
+
+        <label for="precoDe">Preço De:</label>
+        <select id="precoDe">
+          <option value="">De</option>
+        </select>
+
+        <label for="precoAte">Preço Até:</label>
+        <select id="precoAte">
+          <option value="">Até</option>
+        </select>
+
+        <label for="ordenarPor">Ordenar por:</label>
+        <select id="ordenarPor">
+          <option value="">Selecione</option>
+          <option value="nome-asc">Nome - A a Z</option>
+          <option value="nome-desc">Nome - Z a A</option>
+          <option value="preco-asc">Preço - Menor para Maior</option>
+          <option value="preco-desc">Preço - Maior para Menor</option>
+          <option value="ano-asc">Ano - Mais Antigo</option>
+          <option value="ano-desc">Ano - Mais Novo</option>
+        </select>
+
+        <button id="buscar">Buscar</button>
+      </aside>
+
+      <!-- Área de listagem de carros -->
+      <section class="car-list">
+        <!-- Lista de carros será exibida aqui -->
+      </section>
+    </main>
+    <div id="pagination" class="pagination">
+      <!-- Páginas serão exibidas aqui -->
+    </div>
+
+    <!-- footer -->
+    <footer>
+      <div id="footer_content">
+        <div id="footer_contacts">
+          <h1>Logo</h1>
+          <p>
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry.
+          </p>
+
+          <div id="footer_social_media">
+            <a href="#" class="footer-link" id="instagram">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+
+            <a href="#" class="footer-link" id="facebook">
+              <i class="fa-brands fa-facebook-f"></i>
+            </a>
+
+            <a href="#" class="footer-link" id="whatsapp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </a>
+          </div>
+        </div>
+
+        <ul class="footer-list">
+          <li>
+            <h3>Blog</h3>
+          </li>
+          <li>
+            <a href="#" class="footer-link">Tech</a>
+          </li>
+          <li>
+            <a href="#" class="footer-link">Adventures</a>
+          </li>
+          <li>
+            <a href="#" class="footer-link">Music</a>
+          </li>
+        </ul>
+
+        <ul class="footer-list">
+          <li>
+            <h3>Products</h3>
+          </li>
+          <li>
+            <a href="#" class="footer-link">App</a>
+          </li>
+          <li>
+            <a href="#" class="footer-link">Desktop</a>
+          </li>
+          <li>
+            <a href="#" class="footer-link">Cloud</a>
+          </li>
+        </ul>
+
+        <div id="footer_subscribe">
+          <h3>Subscribe</h3>
+
+          <p>Enter your e-mail to get notified about our news solutions</p>
+
+          <div id="input_group">
+            <input type="email" id="email" />
+            <button>
+              <i class="fa-regular fa-envelope"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div id="footer_copyright">
+        © 2024 Todos os Direitos Reservados OverHaul
+      </div>
+    </footer>
+
+    <script src="/src/js/filtros.js"></script>
+    <script src="/src/js/script.js"></script>
+  </body>
+</html>
