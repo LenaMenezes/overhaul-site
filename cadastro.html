@@ -1,0 +1,337 @@
+<!-- Feedback -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/src/css/style.css">
+    <title>Cadastro</title>
+    <style>
+      .cadastro {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #2020200c;
+        padding-top: 20px;
+      }
+
+      .conteudo {
+        width: 100%;
+        max-width: 800px;
+        padding: 20px;
+        margin-bottom: 30px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.238);
+      }
+
+      h1 {
+        margin-top: 10px;
+        text-align: center;
+        font-size: 24px;
+        margin-bottom: 20px;
+        color: #333;
+      }
+
+      h2 {
+        font-size: 18px;
+        color: #333;
+        margin-bottom: 10px;
+      }
+
+      .formulario {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .informacoes-pessoais,
+      .informacoes-endereco {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      input[type="text"],
+      input[type="email"],
+      input[type="password"],
+      select {
+        flex: 1 1 48%;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        font-size: 16px;
+        color: #333;
+        background-color: #f7f9fc;
+      }
+
+      .senha-instrucao {
+        flex: 1 1 100%;
+        font-size: 12px;
+        margin-left: 15px;
+        color: #666;
+        list-style-type: decimal;
+        margin-top: 5px;
+      }
+
+      button {
+        padding: 10px;
+        font-size: 16px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        color: #fff;
+        background-color: #9820cb;
+        transition: 0.3s;
+      }
+
+      button:hover {
+        background-color: #8b00db;
+        opacity: 0.9;
+      }
+
+      @media (max-width: 600px) {
+        .container {
+          padding: 10px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        select {
+          flex: 1 1 100%;
+        }
+
+        .cadastrar,
+        .login {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+        <!-- container -->
+        <div class="container">
+          <nav>
+            <a href="index.html">
+              <img class="logo" src="src/img/logo.png" alt="Logo" />
+            </a>
+        </div>
+    </header>
+
+    <section class="cadastro">
+      <div class="conteudo">
+        <h1>Cadastre-se abaixo</h1>
+
+        <form class="formulario" onsubmit="return validarCampos()">
+          <h2>Informações Pessoais</h2>
+          <div class="informacoes-pessoais">
+            <input type="text" id="nome" placeholder="Digite o seu nome" />
+            <p id="erro-nome" style="color: red; display: none">
+              Nome é obrigatório.
+            </p>
+
+            <input
+              type="text"
+              id="sobrenome"
+              placeholder="Digite o seu Sobrenome"
+            />
+            <p id="erro-sobrenome" style="color: red; display: none">
+              Sobrenome é obrigatório.
+            </p>
+
+            <input
+              type="text"
+              id="telefone"
+              placeholder="Digite o seu telefone"
+            />
+            <p id="erro-telefone" style="color: red; display: none">
+              Telefone inválido.
+            </p>
+
+            <input type="email" id="email" placeholder="Digite o seu Email" />
+            <p id="erro-email" style="color: red; display: none">
+              Email inválido.
+            </p>
+
+            <input
+              type="text"
+              id="cpfCnpj"
+              placeholder="Digite o seu Cpf/Cnpj"
+            />
+            <p id="erro-cpfCnpj" style="color: red; display: none">
+              CPF/CNPJ inválido.
+            </p>
+
+            <select id="tipoCliente">
+              <option value="">Tipo de cliente</option>
+              <option value="pessoaFisica">Pessoa Física</option>
+              <option value="pessoaJuridica">Pessoa Jurídica</option>
+            </select>
+            <p id="erro-tipoCliente" style="color: red; display: none">
+              Selecione um tipo de cliente.
+            </p>
+
+            <input
+              type="password"
+              id="senha"
+              placeholder="Digite uma senha"
+              oninput="validarSenha()"
+            />
+            <ul class="senha-instrucao">
+              <li id="criterio-longo">
+                Longa: com letras, números e símbolos.
+              </li>
+              <li id="criterio-complexo">Complexa: não seja óbvia.</li>
+              <li id="criterio-pratica">
+                Prática: lembrar dela com facilidade.
+              </li>
+            </ul>
+            <p id="mensagem-erro" style="color: red; display: none">
+              A senha não atende aos critérios.
+            </p>
+          </div>
+
+          <h2>Informações de Endereço</h2>
+          <div class="informacoes-endereco">
+            <input
+              type="text"
+              name="cep"
+              placeholder="CEP"
+              id="cep"
+              onblur="buscarEndereco()"
+            />
+            <p id="erro-cep" style="color: red; display: none">CEP inválido.</p>
+            <input type="text" name="rua" placeholder="Logradouro" id="rua" />
+            <input type="text" name="bairro" placeholder="Bairro" id="bairro" />
+            <input type="text" name="cidade" placeholder="Cidade" id="cidade" />
+            <input type="text" name="estado" placeholder="Estado" id="estado" />
+            <input type="text" placeholder="Número" id="numero" />
+            <input type="text" placeholder="Complemento" id="complemento" />
+          </div>
+
+          <button type="submit" class="cadastrar">Cadastrar</button>
+          <button type="button" class="login">Login</button>
+        </form>
+      </div>
+    </section>
+
+    <script>
+      function buscarEndereco() {
+        const cep = document.getElementById("cep").value.replace(/\D/g, "");
+        if (cep.length !== 8) {
+          document.getElementById("erro-cep").style.display = "block";
+          return;
+        } else {
+          document.getElementById("erro-cep").style.display = "none";
+        }
+
+        fetch(`https://viacep.com.br/ws/${cep}/json/`)
+          .then((response) => response.json())
+          .then((data) => {
+            if (data.erro) {
+              alert("CEP não encontrado!");
+              return;
+            }
+            document.getElementById("rua").value = data.logradouro;
+            document.getElementById("bairro").value = data.bairro;
+            document.getElementById("cidade").value = data.localidade;
+            document.getElementById("estado").value = data.uf;
+          })
+          .catch((error) => console.error("Erro ao buscar o CEP:", error));
+      }
+
+      function validarSenha() {
+        const senha = document.getElementById("senha").value;
+        const criterioLongo = document.getElementById("criterio-longo");
+        const criterioComplexo = document.getElementById("criterio-complexo");
+        const criterioPratica = document.getElementById("criterio-pratica");
+
+        const contemLetra = /[a-zA-Z]/.test(senha);
+        const contemNumero = /[0-9]/.test(senha);
+        const contemSimbolo = /[!@#$%^&*(),.?":{}|<>]/.test(senha);
+        const senhaLonga = senha.length >= 8;
+
+        const senhasObvias = [
+          "",
+          "123456",
+          "senha",
+          "abcdefghijklmnopqrstuvwxyz",
+          "1234567890",
+          "111111",
+        ];
+        const senhaComplexa = !senhasObvias.includes(senha.toLowerCase());
+        const repeteCaractere = /^(.)\1+$/.test(senha);
+
+        criterioLongo.style.color =
+          senhaLonga && contemLetra && contemNumero && contemSimbolo
+            ? "green"
+            : "red";
+        criterioComplexo.style.color = senhaComplexa ? "green" : "red";
+        criterioPratica.style.color =
+          senhaLonga && !repeteCaractere ? "green" : "red";
+
+        const criteriosAtendidos =
+          criterioLongo.style.color === "green" &&
+          criterioComplexo.style.color === "green" &&
+          criterioPratica.style.color === "green";
+
+        document.getElementById("mensagem-erro").style.display =
+          criteriosAtendidos ? "none" : "block";
+      }
+
+      function validarCampos() {
+        let valido = true;
+
+        const camposObrigatorios = [
+          { id: "nome", erroId: "erro-nome", mensagem: "Nome é obrigatório." },
+          {
+            id: "sobrenome",
+            erroId: "erro-sobrenome",
+            mensagem: "Sobrenome é obrigatório.",
+          },
+          {
+            id: "telefone",
+            erroId: "erro-telefone",
+            mensagem: "Telefone inválido.",
+          },
+          { id: "email", erroId: "erro-email", mensagem: "Email inválido." },
+          {
+            id: "cpfCnpj",
+            erroId: "erro-cpfCnpj",
+            mensagem: "CPF/CNPJ inválido.",
+          },
+          {
+            id: "tipoCliente",
+            erroId: "erro-tipoCliente",
+            mensagem: "Selecione um tipo de cliente.",
+          },
+        ];
+
+        camposObrigatorios.forEach((campo) => {
+          const elemento = document.getElementById(campo.id);
+          const valor = elemento.value.trim();
+          const mensagemErro = document.getElementById(campo.erroId);
+          if (
+            valor === "" ||
+            (campo.id === "telefone" && !/^\d{10,11}$/.test(valor)) ||
+            (campo.id === "email" && !/^\S+@\S+\.\S+$/.test(valor)) ||
+            (campo.id === "cpfCnpj" && !/^\d{11,14}$/.test(valor))
+          ) {
+            mensagemErro.style.display = "block";
+            valido = false;
+          } else {
+            mensagemErro.style.display = "none";
+          }
+        });
+
+        validarSenha();
+        return (
+          valido &&
+          document.getElementById("mensagem-erro").style.display === "none"
+        );
+      }
+    </script>
+  </body>
+</html>

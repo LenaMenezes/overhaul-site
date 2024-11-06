@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Carrinho de Compras</title>
+  <link rel="stylesheet" href="/src/css/style.css">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #202020 ;
+      margin: 0;
+    }
+
+    .carrinho {
+      font-family: Arial, sans-serif;
+      color: #fff;
+      padding: 20px;
+      margin: 0 auto;
+      max-width: max-content;
+      border-radius: 8px;
+    }
+
+    .titulo-carrinho img{
+        width: 300px;
+    }
+
+    .carrinho .container {
+
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap; 
+      gap: 20px;
+      padding: 20px;
+      border-radius: 8px;
+    }
+
+    .itens {
+      background-color: #2D2D2D;
+      flex: 1;
+      border-radius: 8px;
+      overflow: hidden;
+      padding: 20px;
+    }
+
+    .item {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin-bottom: 20px;
+      overflow: hidden;
+      flex-wrap: wrap
+    }
+
+    .imagem-produto {
+      width: 280px;
+      max-width: 100%;
+    }
+    .titulo-carrinho{
+        width: 350px;
+    }
+
+    .info-produto {
+      flex: 1;
+      padding: 0 15px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border-radius: 8px;
+      height: 35vh;
+      flex-wrap: wrap
+    }
+
+    .acoes {
+      display: flex;
+      align-items: center;
+      margin-top: 10px;
+      gap: 10px;
+    }
+
+    .quantidade, .btn-excluir, .btn-fechar-pedido {
+      height: 40px;
+      padding: 10px 20px;
+      border: none;
+      color: #fff;
+      border-radius: 5px;
+      background-color: #202020;
+      box-shadow: 2px 2px 5px rgba(192, 192, 192, 0.5);
+      cursor: pointer;
+      white-space: nowrap;
+      transition: 0.3s;
+    }
+
+    .btn-fechar-pedido {
+      margin-top: 20px;
+      width: 100%;
+    }
+
+    .resumo {
+        background-color: #2D2D2D;
+      padding: 20px;
+      border-radius: 8px;
+      width: 25%;
+      text-align: center;
+      height: max-content;
+      flex-shrink: 0;
+      color: #fff;
+    }
+
+    .info-preco {
+      color: #fff;
+      width: 100%;
+      margin-top: 20px;
+      padding: 15px;
+      border-radius: 8px;
+      background-color: #2D2D2D;
+    }
+
+    .info-preco p {
+      font-size: 15px;
+      color: #fff;
+      letter-spacing: 1px;
+      margin: 0;
+    }
+
+    .subtotal p{
+      color: #fff;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+      
+      .resumo {
+        width: 100%;
+        max-width: none;
+      }
+    }
+  </style>
+  
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <a href="index.html">
+          <img class="logo" src="src/img/logo.png" alt="Logo" />
+        </a>
+        <ul class="ul">
+          <a href="#" id="abrirModal">Iniciar Sessão</a>
+          <a href="nossos-carros.html">NOSSOS CARROS</a>
+          <a id="menu-toggle">MENU</a>
+          <div class="close-icon" onclick="closeMenu()">
+            <i class="fa-solid fa-circle-xmark"></i>
+          </div>
+        </ul>
+        <div class="menu-icon" onclick="openMenu()">
+          <i class="fas fa-bars"></i>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <div id="side-menu" class="menu">
+    <button id="close-menu">×</button>
+    <div id="logo-menu">
+      <img src="/src/img/logo.png" alt="Overhaul Logo" style="width: 150px" />
+    </div>
+    <hr style="margin-top: 15px" />
+    <div class="links-menu-lateral">
+      <ul>
+        <li><a href="login.html" >Iniciar Sessão</a></li>
+        <li><a href="nossos-carros.html">Comprar</a></li>
+        <li><a href="#">Ajude-nos a Melhorar</a></li>
+        <li><a href="#">Por que Overhaul</a></li>
+        <li><a href="#">Suporte</a></li>
+      </ul>
+    </div>
+
+    <hr style="margin-bottom: 20px" />
+
+    <div class="social">
+      <a href="#"><img src="/src/img/facebook.png" alt="Facebook" /></a>
+      <a href="#"><img src="/src/img/instagram.png" alt="Instagram" /></a>
+      <a href="#"><img src="/src/img/linkedin.png" alt="LinkedIn" /></a>
+    </div>
+  </div>
+  <div id="modalLogin" class="modal">
+    <div class="conteudo-modal">
+      <span class="fechar">&times;</span>
+      <h2>Faça login com a OverHaul</h2>
+      <p>Com seu Haul ID, você agora pode:</p>
+      <ul>
+        <li><span class="check-list">✔</span> Acompanhar seus pedidos</li>
+        <li>
+          <span class="check-list">✔</span> Manter-se atualizado com o
+          conteúdo
+        </li>
+        <li>
+          <span class="check-list">✔</span> Receber atendimento exclusivo
+        </li>
+        <li>
+          <span class="check-list">✔</span> Acessar nossos recursos online
+        </li>
+      </ul>
+      <a href="login.html"><button class="botao-login">Iniciar Sessão</button></a>
+      <a href="criar-conta.html"><button class="botao-criar-conta">Criar Conta</button></a>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- ======================================== -->
+  <section class="carrinho">
+    <div class="titulo-carrinho"><img src="/src/img/img-carrinho.png" alt=""></div>
+    <div class="container">
+      
+      <!-- Itens do carrinho -->
+      <div class="itens">
+        <div class="item">
+          <img src="/src/img/carro1.png" alt="Imagem do carro" class="imagem-produto" />
+          <div class="info-produto">
+            <div class="nome-produto">Nome: Carro X</div>
+            <div class="preco-produto">Preço: R$ 200.950</div>
+            <div class="caracteristica-produto">Cor: Preto</div>
+            <div class="modelo-produto">Modelo: Esportivo</div>
+
+            <div class="acoes">
+              <div class="quantidade">
+                <label>Quantidade: 1</label>
+              </div>
+              <button class="btn-excluir">Excluir</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="item">
+            <img src="/src/img/carro1.png" alt="Imagem do carro" class="imagem-produto" />
+            <div class="info-produto">
+              <div class="nome-produto">Nome: Carro X</div>
+              <div class="preco-produto">Preço: R$ 200.950</div>
+              <div class="caracteristica-produto">Cor: Preto</div>
+              <div class="modelo-produto">Modelo: Esportivo</div>
+  
+              <div class="acoes">
+                <div class="quantidade">
+                  <label>Quantidade: 1</label>
+                </div>
+                <button class="btn-excluir">Excluir</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="item">
+            <img src="/src/img/carro1.png" alt="Imagem do carro" class="imagem-produto" />
+            <div class="info-produto">
+              <div class="nome-produto">Nome: Carro X</div>
+              <div class="preco-produto">Preço: R$ 200.950</div>
+              <div class="caracteristica-produto">Cor: Preto</div>
+              <div class="modelo-produto">Modelo: Esportivo</div>
+  
+              <div class="acoes">
+                <div class="quantidade">
+                  <label>Quantidade: 1</label>
+                </div>
+                <button class="btn-excluir">Excluir</button>
+              </div>
+            </div>
+          </div>
+      </div>
+
+      <!-- Resumo do pedido -->
+      <div class="resumo">
+        <div class="subtotal">
+          <p>Subtotal (3 produtos):</p>
+          <strong><p>R$ 100.900</p></strong> 
+        </div>
+        <button class="btn-fechar-pedido">Fechar Pedido</button>
+      </div>
+    </div>
+
+    <div class="info-preco">
+      <p>O preço e a disponibilidade dos produtos na OverHaul.com.br estão sujeitos a alterações. O carrinho de compras é um local temporário para armazenar uma lista de seus produtos e reflete o preço mais atualizado de cada um deles.</p>
+    </div>
+  </section>
+  <script src="/src/js/modal-iniciar.js"></script>
+  <script src="/src/js/script.js"></script>
+  <script src="/src/js/menu-lateral.js"></script>
+</body>
+</html>

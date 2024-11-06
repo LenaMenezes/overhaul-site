@@ -10,7 +10,9 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link rel="stylesheet" href="src/css/style.css" />
+    <link rel="stylesheet" href="/src/css/style.css" />
+    <link rel="stylesheet" href="/src/css/nossos-carros.css">
+    <link rel="stylesheet" href="/src/css/media-query.css">
     <title>Nossos Carros</title>
   </head>
   <body style="background-color: #202020;">
@@ -23,9 +25,9 @@
             <img class="logo" src="src/img/logo.png" alt="Logo" />
           </a>
           <ul class="ul">
-            <a href="iniciar_sessao.html">iNICIAR SESSÃO</a>
-            <a href="index.html">HOMe</a>
-            <a href="menu.html">MENU</a>
+            <a href="login.html" id="abrirModal">Iniciar Sessão</a>
+            <a href="index.html">HOME</a>
+            <a id="menu-toggle">MENU</a>
             <div class="close-icon" onclick="closeMenu()">
               <i class="fa-solid fa-circle-xmark"></i>
             </div>
@@ -38,11 +40,63 @@
       <!-- end container -->
     </header>
     <!-- end header -->
+
+    <!-- menu lateral -->
+    <div id="side-menu" class="menu">
+      <button id="close-menu">×</button>
+      <div id="logo-menu">
+          <img src="/src/img/logo.png" alt="Overhaul Logo" style="width: 150px;">
+      </div>
+      <hr style="margin-top: 15px;">
+      <div class="links-menu-lateral">
+          <ul>
+              <li><a href="login.html">Iniciar Sessão</a></li>
+              <li><a href="nossos-carros.html">Comprar</a></li>
+              <li><a href="#">Ajude-nos a Melhorar</a></li>
+              <li><a href="#">Por que Overhaul</a></li>
+              <li><a href="#">Suporte</a></li>
+          </ul>
+      </div>
+
+      <hr style="margin-bottom: 20px;">
+
+      <div class="social">
+          <a href="#"><img src="/src/img/facebook.png" alt="Facebook"></a>
+          <a href="#"><img src="/src/img/instagram.png" alt="Instagram"></a>
+          <a href="#"><img src="/src/img/linkedin.png" alt="LinkedIn"></a>
+      </div>
+  </div>
+  <!-- fim menu lateral -->
+
+      <!-- modal iniciar sessão -->
+      <div id="modalLogin" class="modal">
+        <div class="conteudo-modal">
+          <span class="fechar">&times;</span>
+          <h2>Faça login com a OverHaul</h2>
+          <p>Com seu Haul ID, você agora pode:</p>
+          <ul>
+            <li><span class="check-list">✔</span> Acompanhar seus pedidos</li>
+            <li>
+              <span class="check-list">✔</span> Manter-se atualizado com o
+              conteúdo
+            </li>
+            <li>
+              <span class="check-list">✔</span> Receber atendimento exclusivo
+            </li>
+            <li>
+              <span class="check-list">✔</span> Acessar nossos recursos online
+            </li>
+          </ul>
+          <button class="botao-login">Iniciar Sessão</button>
+          <button class="botao-criar-conta">Criar Conta</button>
+        </div>
+      </div>
+      <!-- fim modal iniciar sessão -->
+
     <div class="container-cars">
-      <img src="/src/img/img-news.png" alt="news - mais vendidos " />
+      <img src="/src/img/nossos-carros.png" alt="news - mais vendidos " />
     </div>
     <main>
-      <!-- Barra lateral com filtro -->
       <aside>
         <input type="text" id="pesquisa" placeholder="Pesquisar" />
 
@@ -93,17 +147,14 @@
 
         <button id="buscar">Buscar</button>
       </aside>
-
-      <!-- Área de listagem de carros -->
       <section class="car-list">
-        <!-- Lista de carros será exibida aqui -->
+        <!-- lista de carros será exibida aqui -->
       </section>
     </main>
     <div id="pagination" class="pagination">
-      <!-- Páginas serão exibidas aqui -->
+      <!-- paginas serão exibidas aqui -->
     </div>
 
-    <!-- footer -->
     <footer>
       <div id="footer_content">
         <div id="footer_contacts">
@@ -177,7 +228,9 @@
       </div>
     </footer>
 
-    <script src="/src/js/filtros.js"></script>
     <script src="/src/js/script.js"></script>
+    <script src="/src/js/modal-iniciar.js"></script>
+    <script src="/src/js/menu-lateral.js"></script>
+    <script src="/src/js/filtros.js"></script>
   </body>
 </html>

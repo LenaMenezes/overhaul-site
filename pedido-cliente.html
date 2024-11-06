@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pedidos do Cliente</title>
+<link rel="stylesheet" href="/src/css/style.css">
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    
+    .pedido-cliente {
+        font-family: Arial, sans-serif;
+        background-color: #202020;
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 40px;
+    }
+
+    .conteudo {
+        max-width: 1200px;
+        width: 100%;
+        border-radius: 8px;
+        padding: 20px;
+    }
+
+    .title {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 20px;
+        text-align: left;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #444;
+    }
+
+    .order {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding: 15px;
+        margin-bottom: 15px;
+        border-bottom: 1px solid #444;
+
+    }
+
+    .order h3 {
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    .order p {
+        font-size: 18px;
+        margin-bottom: 8px;
+        color: #fff;
+    }
+
+    .order-items {
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+    .order-items p {
+        margin-top: 20px;
+    }
+    .order-items strong {
+        font-size: 20px;
+    }
+
+    .order .details-button {
+        background-color: #333;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        font-size: 14px;
+        cursor: pointer;
+        text-align: center;
+        width: 30%;
+        transition: background 0.3s;
+    }
+
+    .order .details-button:hover {
+        background-color: #444;
+    }
+    .conteudo img{
+        width: 100%;
+        max-width: 1000px;
+        margin-bottom: 20px;
+    }
+
+    @media (max-width: 600px) {
+        .order {
+            text-align: left;
+        }
+
+        .order .details-button {
+            width: 100%;
+            margin-top: 10px;
+        }
+    }
+</style>
+</head>
+<body>
+    <header>
+        <div class="container">
+          <nav>
+            <a href="index.html">
+              <img class="logo" src="src/img/logo.png" alt="Logo" />
+            </a>
+        </div>
+    </header>
+<section class="pedido-cliente">
+    <div class="conteudo">
+        <img src="src/img/img-pedido-cliente.png" alt="">
+        <div class="title">Pedidos do Cliente</div>
+    
+        <!-- Pedido #12 -->
+        <div class="order">
+            <h3>Pedido #12 - 01/11/2024</h3>
+            <p>Status: Pagamento Concluido</p>
+            <p>Valor Total: R$ 80.000,00</p>
+            <div class="order-items">
+                <strong>Itens do Pedido:</strong>
+                <p>Modelo: Prius, Marca: Toyota</p>
+            </div>
+            <button class="details-button">Ver Detalhes da Compra</button>
+        </div>
+    
+        <!-- Pedido #11 -->
+        <div class="order">
+            <h3>Pedido #11 - 01/11/2024</h3>
+            <p>Status: Pagamento Concluido</p>
+            <p>Valor Total: R$ 80.000,00</p>
+            <div class="order-items">
+                <strong>Itens do Pedido:</strong>
+                <p>Modelo: Prius, Marca: Toyota</p>
+            </div>
+            <button class="details-button">Ver Detalhes da Compra</button>
+        </div>
+    
+        <!-- Pedido #10 -->
+        <div class="order">
+            <h3>Pedido #10 - 01/11/2024</h3>
+            <p>Status: Pagamento Concluido</p>
+            <p>Valor Total: R$ 80.000,00</p>
+            <div class="order-items">
+                <strong>Itens do Pedido:</strong>
+                <p>Modelo: Prius, Marca: Toyota</p>
+            </div>
+            <button class="details-button">Ver Detalhes da Compra</button>
+        </div>
+    </div>
+</section>
+
+
+</body>
+</html>

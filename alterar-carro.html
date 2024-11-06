@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alterar Carro</title>
+    <link rel="stylesheet" href="/src/css/style.css" />
+    <style>
+      body {
+        background-color: #202020;
+        color: #fff;
+      }
+
+      .adicionar-carro {
+        font-family: Arial, sans-serif;
+        background-color: #202020;
+        color: #f0f0f0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .container-adicionar {
+        width: 90%;
+        max-width: 1200px;
+        background-color: #2d2d2d;
+        padding: 20px;
+        margin-top: 40px;
+        border-radius: 8px;
+      }
+
+      h2 {
+        text-align: center;
+        margin-bottom: 20px;
+        border-bottom: 1px solid #666;
+        padding-bottom: 10px;
+      }
+
+      .form-adicionar {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+      }
+
+      .imagem-preview {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        width: 300px;
+        height: 300px;
+        text-align: center;
+      }
+
+      .imagem-preview img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #202020;
+        margin-bottom: 5px;
+      }
+
+      .imagem-preview input {
+        display: none;
+      }
+
+      .imagem-preview label {
+        display: block;
+        background-color: #202020;
+        color: #f0f0f0;
+        padding: 10px;
+        cursor: pointer;
+        border-radius: 4px;
+        margin-top: 20px;
+        box-shadow: 0 0 10px rgb(95, 95, 95);
+      }
+
+      .input-group {
+        flex: 1;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+      }
+
+      .input-group input,
+      .input-group select,
+      .input-group textarea {
+        background-color: #202020;
+        font-size: 15px;
+        border: none;
+        padding: 8px;
+        color: #fff;
+
+        border-radius: 4px;
+      }
+
+      textarea {
+        grid-column: span 2;
+        resize: vertical;
+      }
+
+      button[type="submit"] {
+        width: 100%;
+        padding: 10px;
+        background-color: #555;
+        color: #f0f0f0;
+        border: none;
+        cursor: pointer;
+        border-radius: 4px;
+        margin-top: 10px;
+      }
+
+      @media (max-width: 768px) {
+        .input-group {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <nav>
+          <a href="index.html">
+            <img class="logo" src="src/img/logo.png" alt="Logo" />
+          </a>
+        </nav>
+      </div>
+    </header>
+    <section class="adicionar-carro">
+      <div class="container-adicionar">
+        <h2>Alterar Carro</h2>
+        <form class="form-adicionar" enctype="multipart/form-data">
+          <div class="imagem-preview">
+            <img id="preview" src="" alt="Escolha uma imagem" />
+            <label for="imagem">Escolha imagem</label>
+            <input
+              type="file"
+              id="imagem"
+              accept="image/*"
+              onchange="carregarImagem(event)"
+            />
+          </div>
+
+          <div class="input-group">
+            <input type="text" placeholder="Modelo" />
+            <input type="text" placeholder="Marca" />
+            <input type="text" placeholder="Ano" />
+            <input type="text" placeholder="Preço" />
+            <input type="text" placeholder="Carregador" />
+            <select>
+              <option>Categoria</option>
+            </select>
+            <input type="text" placeholder="Cor" />
+            <textarea placeholder="Descrição"></textarea>
+          </div>
+
+          <button type="submit">Atualizar Carro</button>
+        </form>
+      </div>
+    </section>
+
+    <script>
+      function carregarImagem(event) {
+        const preview = document.getElementById("preview");
+        preview.src = URL.createObjectURL(event.target.files[0]);
+      }
+    </script>
+  </body>
+</html>

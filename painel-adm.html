@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Painel do Adm</title>
+    <link rel="stylesheet" href="/src/css/style.css">
+    <style>
+      .painel-adm {
+        font-family: Arial, sans-serif;
+        background-color: #202020f7;
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        padding: 30px 0px;
+      }
+
+      .conteudo {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        padding: 20px;
+        background-color: #202020;
+        border-radius: 8px;
+        max-width: 1200px;
+        width: 100%;
+      }
+
+      .sidebar {
+        flex: 1;
+        min-width: 200px;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        background-color: #111;
+        padding: 20px;
+        border-radius: 8px;
+      }
+
+      .sidebar h2 {
+        font-size: 18px;
+        text-align: center;
+        margin-bottom: 10px;
+      }
+
+      .sidebar p {
+        text-align: center;
+        margin-bottom: 20px;
+        font-size: 16px;
+        color: #fff;
+      }
+
+      .sidebar a {
+        background-color: #333;
+        padding: 10px;
+        text-align: center;
+        border-radius: 5px;
+        color: #fff;
+        text-decoration: none;
+        transition: background 0.3s;
+      }
+
+      .sidebar a:hover {
+        background-color: #444;
+      }
+
+      .form-container {
+        flex: 3;
+        min-width: 250px;
+        padding: 20px;
+        background-color: #111;
+        border-radius: 8px;
+      }
+
+      .form-container h2 {
+        font-size: 18px;
+        margin-bottom: 15px;
+        border-bottom: 1px solid #444;
+        padding-bottom: 5px;
+      }
+
+      .form-group {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 15px;
+      }
+
+      .form-group label {
+        margin-top: 10px;
+        font-size: 18px;
+        margin-bottom: 5px;
+      }
+
+      .form-row {
+        display: flex;
+        gap: 10px;
+      }
+
+      .form-row .form-group {
+        flex: 1;
+      }
+
+      .buttons {
+        display: flex;
+        gap: 10px;
+        justify-content: flex-end;
+        margin-top: 20px;
+      }
+
+      .buttons button {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 14px;
+      }
+
+      .buttons .sair {
+        background-color: #c0392b;
+        color: #fff;
+      }
+
+      .buttons .editar {
+        background-color: #7f8c8d;
+        color: #fff;
+      }
+
+      @media (max-width: 768px) {
+        .form-row {
+          flex-direction: column;
+        }
+
+        .sidebar,
+        .form-container {
+          min-width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+        <div class="container">
+          <nav>
+            <a href="index.html">
+              <img class="logo" src="src/img/logo.png" alt="Logo" />
+            </a>
+          </nav>
+        </div>
+      </header>
+    <section class="painel-adm">
+      <div class="conteudo">
+        <div class="sidebar">
+          <h2>SEJA<br />BEM - VINDO!</h2>
+          <p>Isabela</p>
+          <img src="/src/img/billie.png" alt="" />
+          <a href="#">Informações Pessoais</a>
+          <a href="#">Ver Meus Pedidos</a>
+          <a href="#">Área do Administrador</a>
+          <a href="#">Privacidade e Segurança</a>
+        </div>
+
+        <div class="form-container">
+          <h2>Informações Pessoais</h2>
+          <form>
+            <div class="form-group">
+              <label for="nome">Nome Completo:</label>
+              <label for="nome">Sobrenome:</label>
+              <label for="nome">E-mail:</label>
+              <label for="nome">Telefone:</label>
+              <label for="nome">CNPJ/CPF:</label>
+              <label for="nome">Tipo Cliente:</label>
+              <br>
+              <label for="nome">CEP:</label>
+              <label for="nome">Logradouro:</label>
+              <label for="nome">Bairro:</label>
+              <label for="nome">Cidade:</label>
+              <label for="nome">Número de Endereço:</label>
+              <label for="nome">Complemento:</label>
+              <label for="nome">UF:</label>
+            </div>
+            <div class="buttons">
+              <button type="button" class="sair">Sair da Conta</button>
+              <button type="submit" class="editar">Editar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

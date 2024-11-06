@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Finalizar compra</title>
+    <link rel="stylesheet" href="/src/css/style.css" />
+    <style>
+      body {
+        background-color: #202020;
+      }
+      .main {
+        display: flex;
+        padding: 20px;
+        width: 100%;
+      }
+      .container-checkout {
+        width: 60%;
+        margin-top: 20px;
+        margin-left: 50px;
+        overflow: hidden;
+        height: max-content;
+      }
+      h2 {
+        color: #ccc;
+        margin-bottom: 10px;
+      }
+      .cabecalho-secao {
+        font-weight: bold;
+        cursor: pointer;
+        color: #fff;
+        font-size: 25px;
+        margin: 20px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+      }
+      .conteudo-secao {
+        display: block;
+        margin-bottom: 20px;
+      }
+      .conteudo-secao.oculto {
+        display: none;
+      }
+      .grupo-input {
+        background-color: #2d2d2d;
+        display: flex;
+        flex-direction: column;
+        margin-left: 20px;
+        height: max-content;
+      }
+
+      #grupo-input-estado {
+        padding-bottom: 20px;
+      }
+      label {
+        margin-top: 10px;
+        margin-bottom: 5px;
+        color: #fff;
+        font-weight: bold;
+        margin-left: 5%;
+      }
+
+      .grupo-input .label-pagamento {
+        margin-top: 0;
+        display: flex;
+        margin-left: 0px;
+        align-items: center;
+      }
+      .grupo-input .label-pagamento img {
+        margin-left: 10px;
+      }
+      .grupo-input .titulo-tipo-pagamento {
+        font-size: 15px;
+        margin-top: 0;
+        margin-bottom: 10px;
+        margin-left: 10px;
+        color: #fff;
+        font-weight: bold;
+      }
+      .grupo-input .label-pagamento p {
+        margin-left: 15px;
+        color: #fff;
+      }
+      input[type="text"],
+      input[type="tel"] {
+        width: 80%;
+        padding: 8px;
+        margin-left: 5%;
+        margin-bottom: 5px;
+        border: none;
+        border-radius: 4px;
+        background-color: #202020;
+        color: #fff;
+        box-shadow: 2px 2px 5px rgba(192, 192, 192, 0.5);
+      }
+      .conteudo-secao button {
+        width: 50%;
+        padding: 10px;
+        margin-top: 10px;
+        border: none;
+        margin-left: 40px;
+        border-radius: 4px;
+        background-color: #202020;
+        box-shadow: 2px 2px 5px rgba(192, 192, 192, 0.5);
+        color: #fff;
+        font-size: 16px;
+        cursor: pointer;
+      }
+
+      .container-resumo-pedido {
+        background-color: #2d2d2d;
+        box-shadow: 2px 2px 5px rgba(192, 192, 192, 0.5);
+        width: 30%;
+        padding: 10px;
+        margin-top: 110px;
+        margin-left: 30px;
+        height: max-content;
+        border-radius: 10px;
+      }
+      .container-finalizar-pedido {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 90%;
+        margin-top: 10px;
+        margin-left: 20px;
+      }
+      .container-finalizar-pedido button {
+        width: 100%;
+        padding: 10px;
+        border: none;
+        border-radius: 4px;
+        background-color: #202020;
+        color: #fff;
+        font-size: 16px;
+        cursor: pointer;
+      }
+      .container-finalizar-pedido p {
+        margin-top: 20px;
+        width: 80%;
+        text-align: center;
+        color: #fff;
+      }
+      .info-resumo-pedido {
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+        margin-left: 20px;
+        margin-bottom: 20px;
+      }
+      .info-resumo-pedido hr {
+        width: 100%;
+        border: 1px solid #ccc;
+      }
+      .hr-resumo-pedido {
+        margin-left: 20px;
+        margin-top: 20px;
+        width: 90%;
+        border: 1px solid #ccc;
+      }
+
+      #secao-revisao {
+        background-color: #2d2d2d;
+        padding-bottom: 40px;
+        margin-left: 20px;
+      }
+      .conteudo-secao-revisao {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: -30px;
+      }
+
+      .conteudo-secao-data {
+        font-weight: bold;
+        cursor: pointer;
+        color: #fff;
+        font-size: 18px;
+        margin: 20px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+      }
+
+      .conteudo-secao-revisao img {
+        margin-top: 40px;
+        border-radius: 0%;
+        width: 30%;
+        height: auto;
+        object-fit: cover;
+        display: block;
+        margin-left: 40px;
+      }
+      .conteudo-secao-info {
+        margin-left: 30px;
+        width: 100%;
+      }
+      .conteudo-secao-info p {
+        color: #fff;
+      }
+      .info-resumo-pedido p {
+        color: #fff;
+      }
+
+      #grupo-input-boleto {
+        padding-bottom: 20px;
+      }
+
+      /* problemas  muy problemas*/
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <nav>
+          <a href="index.html">
+            <img class="logo" src="src/img/logo.png" alt="Logo" />
+          </a>
+          <h4>Finalizar a compra (3 itens)</h4>
+        </nav>
+      </div>
+    </header>
+
+    <section class="main">
+      <div class="container-checkout">
+        <!-- Etapa 1: Endereço -->
+        <div class="container-endereco">
+          <div
+            class="cabecalho-secao"
+            onclick="alternarSecao('secao-endereco')"
+          >
+            1&nbsp;&nbsp;Insira um novo endereço de envio
+          </div>
+          <div class="conteudo-secao" id="secao-endereco">
+            <div class="grupo-input">
+              <label for="pais">País/Região</label>
+              <input
+                type="text"
+                id="campo-desabilitado"
+                value="Brasil"
+                disabled
+              />
+            </div>
+            <div class="grupo-input">
+              <label for="nome">Nome completo</label>
+              <input type="text" id="nome" placeholder="Nome completo" />
+            </div>
+            <div class="grupo-input">
+              <label for="telefone">Telefone</label>
+              <input type="tel" id="telefone" placeholder="(XX) XXXXX-XXXX" />
+            </div>
+            <div class="grupo-input">
+              <label for="cep">CEP</label>
+              <input
+                type="text"
+                id="cep"
+                placeholder="Digite o CEP"
+                maxlength="9"
+                onblur="buscarEndereco()"
+              />
+            </div>
+            <div class="grupo-input">
+              <label for="endereco">Endereço</label>
+              <input type="text" id="endereco" placeholder="Rua, Av., etc." />
+            </div>
+            <div class="grupo-input">
+              <label for="numero">Número da residência</label>
+              <input type="text" id="numero" />
+            </div>
+            <div class="grupo-input">
+              <label for="bairro">Bairro</label>
+              <input type="text" id="bairro" />
+            </div>
+            <div class="grupo-input">
+              <label for="cidade">Cidade</label>
+              <input type="text" id="cidade" />
+            </div>
+            <div class="grupo-input" id="grupo-input-estado">
+              <label for="estado">Estado</label>
+              <input type="text" id="estado" />
+              <button onclick="irParaPagamento()">
+                Continuar para Pagamento
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Etapa 2: Metodo de Pagamento -->
+        <div>
+          <div
+            class="cabecalho-secao"
+            onclick="alternarSecao('secao-pagamento')"
+          >
+            2&nbsp;&nbsp;Selecione um método de pagamento
+          </div>
+          <div class="conteudo-secao oculto" id="secao-pagamento">
+            <div class="grupo-input">
+              <p class="titulo-tipo-pagamento">Pix</p>
+              <label class="label-pagamento">
+                <input type="radio" name="pagamento" value="pix" />
+                <img src="/src/img/pix.png" alt="" />
+                <p>
+                  O código Pix gerado para o pagamento é válido por 30 minutos
+                  após a finalização do pedido.
+                </p>
+              </label>
+            </div>
+            <div class="grupo-input">
+              <p class="titulo-tipo-pagamento">Cartão de crédito</p>
+              <label class="label-pagamento">
+                <input
+                  type="radio"
+                  name="pagamento"
+                  value="cartao"
+                  onclick="exibirFormularioCartao()"
+                />
+                <img src="/src/img/cartao-credito.png" alt="" />
+                <p>
+                  Adicionar uma cartão de crédito > A OverHaul aceita várias
+                  bandeiras de cartão de crédito.
+                </p>
+              </label>
+            </div>
+
+            <div class="grupo-input" id="grupo-input-boleto">
+              <p class="titulo-tipo-pagamento">Boleto</p>
+              <label class="label-pagamento">
+                <input type="radio" name="pagamento" value="boleto" />
+                <img class="img-boleto" src="/src/img/boleto.png" alt="" />
+                <p>
+                  O boleto é pago no endereço fornecido e é enviado para o
+                  comprador.
+                </p>
+              </label>
+              <button onclick="irParaRevisao()">Revisar Pedido</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Etapa 3: Revisão do Pedido -->
+        <div>
+          <div class="cabecalho-secao" onclick="alternarSecao('secao-revisao')">
+            3&nbsp;&nbsp;Revisar itens e envio
+          </div>
+          <div class="conteudo-secao oculto" id="secao-revisao">
+            <strong>
+              <p class="conteudo-secao-data">Chega em 1 de jan. de 2025</p>
+            </strong>
+            <div class="conteudo-secao-revisao">
+              <img src="/src/img/carro2.png" alt="carros do pedido" />
+              <div class="conteudo-secao-info">
+                <!-- aqui ele mostra o que o usuario escolher, é so mudar os nomes e apagar o js no final ou nao sla to com sono parça-->
+                <p>Nome: <span id="revisao-nome"></span></p>
+                <p>Telefone: <span id="revisao-telefone"></span></p>
+                <p>Endereço: <span id="revisao-endereco"></span></p>
+                <p>Método de Pagamento: <span id="revisao-pagamento"></span></p>
+              </div>
+            </div>
+            <button onclick="finalizarPedido()">Finalizar Pedido</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="container-resumo-pedido">
+        <div class="container-finalizar-pedido">
+          <button type="submit">Finalizar Pedido</button>
+          <p>
+            Ao fazer seu pedido, você concorda com as Condições de Uso da
+            OverHaul.
+          </p>
+        </div>
+        <hr class="hr-resumo-pedido" />
+        <div class="info-resumo-pedido">
+          <!-- &nbsp; isso so evidencio o trabalhor porco q ta esse codigo perdao to sem tempo para detalhes ass lena. Para lena do futuro att -->
+          <strong><p style="color: #fff">Resumo do Pedido</p></strong>
+          <p>Itens:&nbsp;--</p>
+          <p>Frete:&nbsp;--</p>
+          <p>Total:&nbsp;--</p>
+          <hr />
+          <p>Total do Pedido:&nbsp;--</p>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      // funxaozinha d validacao do cep!!!!
+      function buscarEndereco() {
+        const cep = document.getElementById("cep").value.replace(/\D/g, "");
+        if (cep.length !== 8) {
+          alert("CEP inválido!");
+          return;
+        }
+
+        fetch(`https://viacep.com.br/ws/${cep}/json/`)
+          .then((response) => response.json())
+          .then((data) => {
+            if (data.erro) {
+              alert("CEP não encontrado!");
+              return;
+            }
+            document.getElementById("endereco").value = data.logradouro;
+            document.getElementById("bairro").value = data.bairro;
+            document.getElementById("cidade").value = data.localidade;
+            document.getElementById("estado").value = data.uf;
+          })
+          .catch((error) => console.error("Erro ao buscar o CEP:", error));
+      }
+
+      function alternarSecao(idSecao) {
+        const secao = document.getElementById(idSecao);
+        secao.classList.toggle("oculto");
+      }
+
+      function irParaPagamento() {
+        document.getElementById("secao-endereco").classList.add("oculto");
+        document.getElementById("secao-pagamento").classList.remove("oculto");
+      }
+
+      // chama o arquivo do cartao como voce vai brincar com isso nao é problema meu!!
+      function exibirFormularioCartao() {
+        window.location.href = "cartao.html";
+      }
+
+      function irParaRevisao() {
+        document.getElementById("revisao-nome").innerText =
+          document.getElementById("nome").value;
+        document.getElementById("revisao-telefone").innerText =
+          document.getElementById("telefone").value;
+
+        const endereco = `${document.getElementById("endereco").value}, ${
+          document.getElementById("numero").value
+        }, ${document.getElementById("bairro").value}, ${
+          document.getElementById("cidade").value
+        } - ${document.getElementById("estado").value}`;
+        document.getElementById("revisao-endereco").innerText = endereco;
+
+        const metodoPagamento = document.querySelector(
+          'input[name="pagamento"]:checked'
+        ).value;
+        document.getElementById("revisao-pagamento").innerText =
+          metodoPagamento === "cartao"
+            ? "Cartão de Crédito"
+            : metodoPagamento === "pix"
+            ? "Pix"
+            : "Boleto";
+
+        document.getElementById("secao-pagamento").classList.add("oculto");
+        document.getElementById("secao-revisao").classList.remove("oculto");
+      }
+
+      window.onload = function () {
+        document.querySelectorAll('input[type="radio"]').forEach((radio) => {
+          radio.checked = false;
+        });
+      };
+
+      // Finalizar pedido
+      function finalizarPedido() {
+        alert("Pedido finalizado com sucesso!");
+      }
+    </script>
+  </body>
+</html>

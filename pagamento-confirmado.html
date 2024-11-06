@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagamento Confirmado</title>
+    <link rel="stylesheet" href="/src/css/style.css">
+    <style>
+        body {
+          color: #fff;
+          background-color: #202020;
+        }
+        .pagamento-confirmado{
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          padding: 40px;
+        }
+
+        .conteudo {
+          background-color: #2d2d2d;
+          border-radius: 10px;
+          padding: 20px;
+          max-width: 1500px;
+          flex-wrap: wrap;
+          width: 100%;
+        }
+
+        .title {
+          text-align: center;
+          font-size: 1.5rem;
+          margin-bottom: 20px;
+        }
+  
+        .content {
+          display: flex;
+          flex-direction: row;
+          padding: 30px;
+          gap: 20px;
+        }
+        .conteudo-detalhes{
+          background-color: #202020;
+          display: flex;
+          padding: 20px;
+          border-radius: 20px;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          gap: 10px;
+        }
+  
+        .order-details,
+        .feedback {
+          border-radius: 8px;
+          padding: 20px;
+          width: 40%;
+          height: max-content;
+        }
+  
+        .order-details {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          width: 100%;
+        }
+  
+        .order-details img {
+          width: 300px;
+          height: auto;
+          border-radius: 5px;
+        }
+  
+        .order-info {
+          height: 40vh;  
+          flex-grow: 1;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          margin-left: 15px;
+          
+        }
+  
+        .order-info p {
+          margin: 5px 0;
+          color: #fff;
+        }
+  
+        .continue-btn {
+          width: 40%;
+          padding: 15px;
+          margin-top: 10px;
+          font-size: 1rem;
+          font-weight: bold;
+          color: #fff;
+          background-color: #00a900;
+          border: none;
+          border-radius: 8px;
+          cursor: pointer;
+          transition: background-color 0.3s;
+        }
+  
+        .continue-btn:hover {
+          background-color: #008c00;
+        }
+  
+        .order-info-titulo{
+          font-size: 25px;
+          margin-bottom: 5px;
+        }
+  
+        .feedback textarea{
+          border-radius: 20px;
+          width: 100%;
+          padding: 20px;
+          margin-top: 20px;
+          color: #fff;
+          background-color: #2D2D2D;
+          box-shadow: 2px 2px 5px rgba(192, 192, 192, 0.5);
+          border: none;
+        }
+  
+        @media (max-width: 600px) {
+          .content {
+            flex-direction: row;
+          }
+  
+          .order-details {
+            width: 60%;
+          }
+  
+          .feedback {
+            width: 35%;
+          }
+        }
+      </style>
+</head>
+<body>
+    <header>
+        <!-- container -->
+        <div class="container">
+          <nav>
+            <a href="index.html">
+              <img class="logo" src="src/img/logo.png" alt="Logo" />
+            </a>
+        </div>
+    </header>
+
+    <section class="pagamento-confirmado">
+        <div class="conteudo">
+            <h2 class="title">Pagamento Confirmado</h2>
+            <div class="content">
+                <div class="conteudo-detalhes">
+                    <h2>1 Iten(s) do Pedido</h2>
+                    <div class="order-details">
+                        <img src="/src/img/carro1.png" alt="Toyota Prius" />
+                        <div class="order-info">
+                            <h3 class="order-info-titulo">prius 1x Prius Toyota</h3>
+                            <p><strong>1 Iten(s) do Pedido</strong></p>
+                            <p><strong>ID do Pedido:</strong> 8</p>
+                            <p>Ano: 2022, Cor: preto</p>
+                            <p><strong>Entrega:</strong> Carlos Chambelland, Jardim Santos</p>
+                            <p><strong>Valor Total:</strong> R$ 80,000.00</p>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="order-details">
+                        <img src="/src/img/carro2.png" alt="Toyota Prius" />
+                        <div class="order-info">
+                            <h3 class="order-info-titulo">prius 1x Prius Toyota</h3>
+                            <p><strong>1 Iten(s) do Pedido</strong></p>
+                            <p><strong>ID do Pedido:</strong> 8</p>
+                            <p>Ano: 2022, Cor: preto</p>
+                            <p><strong>Entrega:</strong> Carlos Chambelland, Jardim Santos</p>
+                            <p><strong>Valor Total:</strong> R$ 80,000.00</p>
+                        </div>
+                    </div>
+                    <button class="continue-btn">Continuar</button>
+            </div>
+            <div class="feedback">
+                <p style="color: #fff;"><strong>Deixe sua Avaliação!</strong></p>
+                <textarea
+                  rows="15  "
+                  placeholder="Nos ajude a melhorar nosso serviço e você sai ganhando..."
+                  readonly
+                  style="resize: none"
+                ></textarea>
+              </div>
+            </div>
+        </div>
+    </section>
+    
+</body>
+</html>

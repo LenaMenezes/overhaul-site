@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Área do Administrador</title>
+    <link rel="stylesheet" href="/src/css/style.css" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background-color: #1a1a1a;
+        color: #f0f0f0;
+      }
+
+      .conteudo,
+      .container-adicionar {
+        display: flex;
+        gap: 20px;
+        padding: 20px;
+        flex-wrap: wrap;
+      }
+
+      .menu-lateral-admin {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        padding: 20px;
+        background-color: #2d2d2d;
+        border-radius: 8px;
+        max-width: 350px;
+        width: 100%;
+      }
+
+      .sidebar {
+        flex: 1;
+        min-width: 200px;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        border-radius: 10px;
+      }
+
+      .sidebar h2 {
+        font-size: 18px;
+        text-align: center;
+        margin-bottom: 5px;
+      }
+
+      .sidebar p {
+        text-align: center;
+        margin-bottom: 10px;
+        font-size: 16px;
+        color: #fff;
+      }
+
+      .sidebar a {
+        background-color: #202020;
+        padding: 10px;
+        text-align: center;
+        border-radius: 5px;
+        color: #fff;
+        text-decoration: none;
+        transition: background 0.3s;
+      }
+
+      .sidebar a:hover {
+        background-color: #444;
+      }
+
+      .area-administrador {
+        flex: 1;
+        background-color: #2d2d2d;
+        padding: 30px;
+        border-radius: 10px;
+        height: max-content;
+      }
+
+      .area-administrador h2 {
+        border-bottom: 1px solid #666;
+        padding-bottom: 10px;
+      }
+
+      .opcoes-admin {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        margin-top: 20px;
+      }
+
+      .opcoes-admin button {
+        width: 45%;
+        background-color: #202020;
+        font-size: 20px;
+        padding: 15px;
+        margin: 10px 5px;
+        border: none;
+        cursor: pointer;
+        color: #f0f0f0;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+      }
+
+      .opcoes-admin button img {
+        width: 100%;
+        max-width: 30px;
+        margin-right: 10px;
+      }
+
+      @media (max-width: 768px) {
+        .conteudo,
+        .container-adicionar {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .opcoes-admin button {
+          width: 100%;
+          font-size: 15px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <nav>
+          <a href="index.html">
+            <img class="logo" src="src/img/logo.png" alt="Logo" />
+          </a>
+        </nav>
+      </div>
+    </header>
+
+    <div class="conteudo">
+      <aside class="menu-lateral-admin">
+        <div class="sidebar">
+          <h2>SEJA<br />BEM - VINDO!</h2>
+          <p>Isabela</p>
+          <img src="/src/img/billie.png" alt="" />
+          <a href="#">Informações Pessoais</a>
+          <a href="#">Ver Meus Pedidos</a>
+          <a href="#">Área do Administrador</a>
+          <a href="#">Suporte</a>
+        </div>
+      </aside>
+
+      <main class="area-administrador">
+        <h2>Área do Administrador</h2>
+        <div class="opcoes-admin">
+          <button>
+            Adicionar Novo Carro <img src="/src/img/adicionar.png" alt="" />
+          </button>
+          <button>
+            Excluir/Atualizar Carro <img src="/src/img/atualizar.png" alt="" />
+          </button>
+          <button>
+            Todos os Tests Drives <img src="/src/img/carro.png" alt="" />
+          </button>
+          <button>
+            Todos os Pedidos <img src="/src/img/carrinho-compras.png" alt="" />
+          </button>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

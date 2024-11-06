@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Testes Drives Agendados</title>
+    <link rel="stylesheet" href="/src/css/style.css">
+    <style>
+       body{
+        background-color: #202020;
+       }
+      .todos-carros {
+        background-color: #202020;
+        color: #eee;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .carros {
+        width: 90%;
+        max-width: 1600px;
+        background-color: #2d2d2d;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        margin-top: 30px;
+      }
+
+      .carros h2 {
+        text-align: center;
+        color: #ddd;
+        margin-bottom: 20px;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+
+      thead {
+        background-color: #444444;
+      }
+
+      th,
+      td {
+        padding: 10px;
+        text-align: center;
+        border-bottom: 1px solid #555;
+      }
+
+      th {
+        color: #ccc;
+        font-weight: bold;
+      }
+
+      tbody tr:hover {
+        background-color: #444;
+      }
+
+      button {
+        padding: 8px 12px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-weight: bold;
+      }
+
+      button.alterar {
+        background-color: #0000cd;
+        color: #fff;
+        margin-right: 5px;
+      }
+
+      button.excluir {
+        background-color: #b22222;
+        color: #fff;
+      }
+
+      @media (max-width: 600px) {
+        th,
+        td {
+          padding: 8px 5px;
+          font-size: 14px;
+        }
+
+        button {
+          padding: 6px 8px;
+          font-size: 12px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+        <!-- container -->
+        <div class="container">
+          <nav>
+            <a href="index.html">
+              <img class="logo" src="src/img/logo.png" alt="Logo" />
+            </a>
+        </div>
+    </header>
+
+    <section class="todos-carros">
+        <div class="carros">
+          <h2>Test Drives Agendados</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Cliente</th>
+                <th>CPF/CNPJ</th>
+                <th>Modelo</th>
+                <th>Marca</th>
+                <th>Ano</th>
+                <th>Data Test Drive</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>Lena</td>
+                <td>123.123.123-67</td>
+                <td>num sei</td>
+                <td>num sei</td>
+                <td>2025</td>
+                <td>15/08/2025</td>
+                <td>Confirmado</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>Lena</td>
+                <td>123.123.123-67</td>
+                <td>num sei</td>
+                <td>num sei</td>
+                <td>2025</td>
+                <td>15/08/2025</td>
+                <td>Confirmado</td>
+              </tr> 
+              <tr>
+                <td>3</td>
+                <td>Lena</td>
+                <td>123.123.123-67</td>
+                <td>num sei</td>
+                <td>num sei</td>
+                <td>2025</td>
+                <td>15/08/2025</td>
+                <td>Confirmado</td>
+              </tr> 
+              <tr>
+                <td>4</td>
+                <td>Lena</td>
+                <td>123.123.123-67</td>
+                <td>num sei</td>
+                <td>num sei</td>
+                <td>2025</td>
+                <td>15/08/2025</td>
+                <td>Confirmado</td>
+              </tr>           
+            </tbody>
+          </table>
+        </div>
+    </section>
+  </body>
+</html>
