@@ -86,6 +86,10 @@
     margin: 10px 0;
 }
 
+.mais-vendidos-descri a {
+    color: #fff;
+}
+
 /* ver tudo cards mobile */
 .all-mobile {
     display: none;
@@ -111,6 +115,7 @@
 }
 
 .modal-conteudo {
+    
     margin: auto;
     margin-top: 60px;
     display: block;
@@ -144,7 +149,7 @@
 
 @-webkit-keyframes zoom {
     from {
-        transform: scale(0)
+        transform: scale(0);
     }
 
     to {
