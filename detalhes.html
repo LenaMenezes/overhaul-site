@@ -8,6 +8,257 @@
     <link rel="stylesheet" href="src/css/detalhes.css" />
     <link rel="stylesheet" href="src/css/media-query.css" />
     <link rel="stylesheet" href="src/css/home.css" />
+    <style>
+      body{
+    background-color: #202020;
+}
+.product-container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    background-color: #202020;
+    padding: 20px;
+    gap: 20px;
+}
+
+.image-gallery {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    gap: 10px;
+}
+
+.thumbnail img {
+    width: 60px;
+    height: 60px;
+    border-radius: 4px;
+    cursor: pointer;
+
+}
+
+.main-image img {
+    width: 550px;
+
+    padding: 10px;
+}
+
+.product-details {
+
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.product-details p {
+    color: #fff;
+}
+
+.product-details .nome-carro,
+.marca-carro,
+.avaliacao-carro,
+.cor-carro {
+    font-size: 20px;
+}
+
+.product-details hr {
+    border: 0.1rem solid #fff;
+    width: 90%;
+}
+
+.product-details .preco {
+    font-size: 25px;
+    color: #fff;
+}
+
+.container-detalhes {
+    justify-content: space-between;
+    display: flex;
+    width: 90%;
+    flex-direction: row;
+    align-items: center;
+}
+
+.container-detalhes select {
+    padding-left: 20px;
+    width: 200px;
+    height: 55px;
+    border: none;
+    color: #fff;
+    border-radius: 5px;
+    background-color: #2D2D2D;
+    box-shadow: 2px 2px 5px rgba(192, 192, 192, 0.5);
+}
+
+.container-detalhes .qtd {
+    display: flex;
+    flex-direction: row;
+    margin-left: 10px;
+    border: none;
+    text-align: center;
+}
+
+.carousel {
+    display: none;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #FFF;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+.color-opcoes {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.color {
+    width: 45px;
+    height: 45px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.buttons{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    width: 90%;
+    justify-content: space-between;
+
+}
+
+.btn-add, .btn-comprar {
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    white-space: nowrap; /* Impede quebra de linha no texto */
+    color: #fff;
+    border-radius: 5px;
+    background-color: #2D2D2D;
+    box-shadow: 2px 2px 5px rgba(192, 192, 192, 0.5);
+}
+
+.btn-add {
+    margin-left: 30px;
+}
+
+
+.description{
+    text-align: justify;
+}
+.description p{
+    color: #fff;
+    font-size: 18px;
+    letter-spacing: 1px;
+}
+.description .description-titulo{
+    font-size: 24px;
+    font-weight: bold;
+    padding-bottom: 20px;
+}
+
+.d-hr{
+    margin-right: 20px;
+    margin-left: 20px;
+    margin-top: 40px;
+}
+
+@media (max-width: 670px) {
+    .image-gallery,
+    .main-image {
+      display: none;
+    }
+
+    .carousel {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      position: relative;
+    }
+
+    .carousel-images {
+      display: flex;
+      overflow: hidden;
+      width: 100%;
+    }
+
+    .carousel-slide {
+      display: none;
+      width: 100%;
+      border-radius: 8px;
+    }
+
+    .carousel-slide.active {
+      display: block;
+    }
+    .container-detalhes,
+    .buttons {
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 1098px) {
+    .product-container {
+      display: flex;
+      justify-content: center;
+    }
+    .product-container .main-image img {
+      width: 550px;
+    }
+  }
+  @media (max-width: 460px) {
+    .container-detalhes,
+    .buttons {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .btn-comprar {
+      width: 100%;
+    }
+    .btn-add {
+      margin-left: 0px;
+      width: 100%;
+    }
+    .container-detalhes .qtd {
+      width: 100%;
+      margin-left: 0px;
+      padding-top: 20px;
+    }
+    .container-detalhes .qtd select {
+      width: 100%;
+    }
+
+    .color-opcoes {
+      width: 100%;
+      display: flex;
+      justify-content: space-around;
+      padding-left: 50px;
+      padding-right: 50px;
+    }
+  }
+    </style>
   </head>
   <body>
     <!-- header -->
@@ -67,18 +318,18 @@
           <img src="src/img/carro2.png" alt="Carro thumbnail 1" />
         </div>
         <div class="thumbnail">
-          <img src="src/img/carro1.png" alt="Carro thumbnail 2" />
+          <img src="src/img/carro2.png" alt="Carro thumbnail 2" />
         </div>
         <div class="thumbnail">
           <img src="src/img/carro2.png" alt="Carro thumbnail 3" />
         </div>
         <div class="thumbnail">
-          <img src="src/img/carro1.png" alt="Carro thumbnail 4" />
+          <img src="src/img/carro2.png" alt="Carro thumbnail 4" />
         </div>
       </div>
 
       <div class="main-image">
-        <img src="src/img/carro1.png" alt="Carro principal" />
+        <img src="src/img/carro2.png" alt="Carro principal" />
       </div>
 
       <div class="carousel">
@@ -92,17 +343,17 @@
             class="carousel-slide"
           />
           <img
-            src="src/img/carro1.png"
+            src="src/img/1.webp"
             alt="Carro thumbnail 1"
             class="carousel-slide"
           />
           <img
-            src="src/img/carro2.png"
+            src="src/img/2.jpg"
             alt="Carro thumbnail 2"
             class="carousel-slide"
           />
           <img
-            src="src/img/carro1.png"
+            src="src/img/3.avif"
             alt="Carro thumbnail 3"
             class="carousel-slide"
           />
@@ -113,11 +364,11 @@
       </div>
 
       <div class="product-details">
-        <p class="nome-carro">Nome: Carro</p>
-        <p class="marca-carro"><strong>Marca:</strong> Marca do Carro A</p>
+        <p class="nome-carro">Nome: Prius</p>
+        <p class="marca-carro"><strong>Marca:</strong> Toyota</p>
         <p class="avaliacao-carro"><strong>Avaliação:</strong> 5.0 ★★★★★</p>
         <hr style="border: 1px solid #fff; width: 90%" />
-        <strong><p class="preco">A partir de R$ 300.000</p></strong>
+        <strong><p class="preco">A partir de R$ 80.000,00</p></strong>
         <strong> <p class="desconto">à vista no Pix (10% off)</p></strong>
         <strong><p class="cor-carro">Cor:</p> </strong>
         <div class="container-detalhes">
@@ -137,22 +388,20 @@
           </div>
         </div>
         <div class="buttons">
-          <a href="#" class="btn-comprar">Comprar agora</a>
-          <a href="#" class="btn-add">Adicionar ao carrinho</a>
+          <a href="#" class="btn-comprar">Adicionar ao carrinho</a>
+          <a href="test-drive.html" class="btn-add">Marcar Test Drive</a>
         </div>
       </div>
       <div class="description">
         <p class="description-titulo">Descrição:</p>
         <p>
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
-          since the 1500s, when an unknown printer took a galley of type and
-          scrambled it to make a type specimen book. It has survived not only
-          five centuries, but also the leap into electronic typesetting,
-          remaining essentially unchanged. It was popularised in the 1960s with
-          the release of Letraset sheets containing Lorem Ipsum passages, and
-          more recently with desktop publishing software like Aldus PageMaker
-          including versions of Lorem Ipsum
+          O BYD Song L é um SUV cupê híbrido plug-in com design arrojado e
+          moderno, inspirado na linguagem visual da marca, a "Dragon
+          Aesthetics": Com 4,84 m de comprimento, 1,95 m de largura e 1,56 m de
+          altura, o Song L é maior que alguns SUVs grandes brasileiros, como o
+          Toyota SW4 e o Jeep Commander. O interior do Song L é semelhante ao do
+          Qin L DM-i, com uma grande tela central de informação e
+          entretenimento, painel de instrumentos digital e head-up display.
         </p>
       </div>
     </div>
@@ -183,7 +432,7 @@
         <!-- card item 2  -->
         <div class="card-item">
           <img class="imagem-clicavel" src="src/img/carro2.png" alt="" />
-          <p class="mais-vendidos-descri">Marca: Tesla</p>
+          <p class="mais-vendidos-descri">Marca: Kia EV4</p>
           <p class="mais-vendidos-descri">Modelo: Model S</p>
           <p class="mais-vendidos-descri">A partir de R$ 300.950</p>
           <p class="mais-vendidos-descri">
@@ -286,8 +535,50 @@
         © 2024 Todos os Direitos Reservados OverHaul
       </div>
     </footer>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+  const slides = document.querySelectorAll(".carousel-slide");
+  const prevBtn = document.querySelector(".prev");
+  const nextBtn = document.querySelector(".next");
+  let currentIndex = 0;
 
-    <script src="src/js/menu-lateral.js"></script>
+  // Função para mostrar o slide ativo
+  function showSlide(index) {
+    slides.forEach((slide, i) => {
+      slide.classList.toggle("active", i === index);
+    });
+  }
+
+  // Navegar para o slide anterior
+  prevBtn.addEventListener("click", () => {
+    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+    showSlide(currentIndex);
+  });
+
+  // Navegar para o próximo slide
+  nextBtn.addEventListener("click", () => {
+    currentIndex = (currentIndex + 1) % slides.length;
+    showSlide(currentIndex);
+  });
+
+  // Exibir o primeiro slide ao carregar a página
+  showSlide(currentIndex);
+
+  // Atualizar o carrossel em mudanças de tamanho de tela
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 670) {
+      // Se for maior que 670px, o carrossel não é necessário
+      slides.forEach(slide => slide.classList.remove("active"));
+      currentIndex = 0;
+    } else {
+      showSlide(currentIndex);
+    }
+  });
+});
+
+    </script>
+
     <script src="src/js/script.js"></script>
+    <script src="src/js/menu-lateral.js"></script>
   </body>
 </html>

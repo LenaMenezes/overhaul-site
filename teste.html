@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detalhes - Overhaul</title>
+  <style>
+    body {
+      background-color: #202020;
+      font-family: Arial, sans-serif;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .product-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 90%;
+      max-width: 800px;
+      background-color: #2a2a2a;
+      border-radius: 10px;
+      padding: 20px;
+      gap: 20px;
+    }
+
+    /* Galeria de imagens */
+    .image-gallery {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .main-image img {
+      width: 100%;
+      max-width: 500px;
+      border-radius: 8px;
+    }
+
+    .thumbnail {
+      display: flex;
+      gap: 10px;
+    }
+
+    .thumbnail img {
+      width: 60px;
+      height: 60px;
+      border-radius: 4px;
+      cursor: pointer;
+      border: 2px solid transparent;
+    }
+
+    .thumbnail img.active {
+      border-color: #fff;
+    }
+
+    /* Carrossel */
+    .carousel {
+      display: none;
+      position: relative;
+      width: 100%;
+    }
+
+    .carousel-images {
+      display: flex;
+      overflow: hidden;
+      width: 100%;
+    }
+
+    .carousel-slide {
+      display: none;
+      width: 100%;
+      border-radius: 8px;
+    }
+
+    .carousel-slide.active {
+      display: block;
+    }
+
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(0, 0, 0, 0.5);
+      color: #FFF;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+      z-index: 1;
+    }
+
+    .prev {
+      left: 10px;
+    }
+
+    .next {
+      right: 10px;
+    }
+
+    /* Responsividade */
+    @media (max-width: 670px) {
+      .image-gallery {
+        display: none;
+      }
+
+      .carousel {
+        display: flex;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="product-container">
+    <!-- Galeria de Imagens -->
+    <div class="image-gallery">
+      <div class="main-image">
+        <img src="src/img/carro1.png" alt="Imagem Principal" id="mainImage">
+      </div>
+      <div class="thumbnail">
+        <img src="src/img/carro1.png" alt="Carro 1" class="thumb active" onclick="updateMainImage(this)">
+        <img src="src/img/carro2.png" alt="Carro 2" class="thumb" onclick="updateMainImage(this)">
+        <img src="src/img/carro3.png" alt="Carro 3" class="thumb" onclick="updateMainImage(this)">
+      </div>
+    </div>
+
+    <!-- Carrossel -->
+    <div class="carousel">
+      <button class="carousel-btn prev" onclick="changeSlide(-1)">&#10094;</button>
+      <div class="carousel-images">
+        <img src="src/img/carro1.png" alt="Carro 1" class="carousel-slide active">
+        <img src="src/img/carro2.png" alt="Carro 2" class="carousel-slide">
+        <img src="src/img/carro3.png" alt="Carro 3" class="carousel-slide">
+      </div>
+      <button class="carousel-btn next" onclick="changeSlide(1)">&#10095;</button>
+    </div>
+  </div>
+
+  <script>
+    // Função para atualizar a imagem principal
+    function updateMainImage(thumb) {
+      const mainImage = document.getElementById('mainImage');
+      const thumbnails = document.querySelectorAll('.thumb');
+
+      // Atualiza a imagem principal
+      mainImage.src = thumb.src;
+
+      // Remove a classe 'active' de todas as miniaturas
+      thumbnails.forEach(t => t.classList.remove('active'));
+
+      // Adiciona a classe 'active' à miniatura clicada
+      thumb.classList.add('active');
+    }
+
+    // Controle do Carrossel
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.carousel-slide');
+
+    function changeSlide(direction) {
+      // Remove a classe ativa do slide atual
+      slides[currentSlide].classList.remove('active');
+
+      // Atualiza o índice do slide
+      currentSlide = (currentSlide + direction + slides.length) % slides.length;
+
+      // Adiciona a classe ativa ao novo slide
+      slides[currentSlide].classList.add('active');
+    }
+  </script>
+</body>
+</html>
